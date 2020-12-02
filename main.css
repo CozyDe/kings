@@ -22,19 +22,20 @@ body {
 
   .nav-contact {
       display: flex;
-      padding: .6rem;
+      padding: .4rem;
       width: 100%;
-      text-align: right;
       justify-content: flex-end;
-      justify-content: space-evenly;
+      /* justify-content: space-evenly; */
   }
 
    .kd-social-icons {
        display: inline-block;
+       /* margin: 0 auto; */
    }
 
     .kd-phone {
         color: red;
+        margin-right: 2rem;
     }
 
     .topp {
@@ -69,6 +70,9 @@ body {
           font-size: 20px;
       }
 
+       .nav-body-list {
+           visibility: visible;
+       }
       .nav-body-list li {
          display: inline-block;
       }
@@ -85,7 +89,7 @@ body {
           width: 22px;
           height: 2px;
           margin: 3.5px 0;
-         background-color:#fff;
+          background-color:#fff;
       }
 
        .line2 {
@@ -101,6 +105,22 @@ body {
            background-color: #fff;
        }
 
+       @keyframes roll {
+           from {
+               transform: scale(0.6);
+           }
+           to {
+               transform: scale(0.9);
+           }
+       }
+
+        .menu-btn {
+            background: red;
+            border-radius: 1.6rem;
+            padding: .8rem;
+            width: 150px;
+            animation: roll 1.5s infinite ease-in;
+        }
       #burger-menu-icon {
           background: gray;
           padding: .6rem;
@@ -178,15 +198,24 @@ body {
           margin-top: 1.2rem;
           display: flex;
           align-items: center;
+          flex-direction: row;
           padding: .6rem;
           flex-wrap: wrap; 
-          /* justify-content: space-evenly; */
           text-align: center;
       }
 
+      @keyframes anime {
+          from {
+              transform: scale(0);
+          }
+          to  {
+              transform: scale(1);
+          }
+      }
+
       .david {
-          max-width: 25%;
-          /* width: 100%; */
+          max-width: calc(100%/4);
+          animation: anime 3s ease-in-out ;
           background: #000;
           border: 3px solid #fff;
           height: auto;
@@ -233,7 +262,46 @@ body {
             color: #fff;
         }
 
-      @media screen and (max-width:480px) {
+        .kings-order {
+            background: red;
+            display: flex;
+            margin-top: 1.5rem;
+            justify-content: space-around;
+            padding: 1.5rem 1rem;
+        }
+
+        .kings-content {
+            font-family: "Aclonica",Sans-serif !important;
+        }
+
+         .kings-content h3 {
+             color: #fff;
+         }
+
+         .book-btn {
+             background: #000;
+             color: #fff;
+             text-align: center;
+             align-items: center;
+             border: 4px solid #fff;
+             padding: .8rem 1rem;
+         }
+
+
+       @media screen and (max-width:350px) {
+            .kd-phone {
+                font-size: 13px;
+                display: inline-block;
+            }
+    }
+     
+        @media screen and (max-width:600px) {
+            .kd-phone {
+                margin-right: 0;
+            }
+            .nav-body-list {
+                display:none;
+            }
             #burger-menu-icon {
                 display: block;
                 visibility: visible;
@@ -243,7 +311,7 @@ body {
                 position: absolute; 
                 background: #000;
                 width: 100%;
-                right: -35rem;
+                right: -100rem;
                 height: 100vh;
                 top: 15vh;
                 display: block;
@@ -254,12 +322,16 @@ body {
             #menu li {
                 display: flex;
                 flex-direction: column;
-                text-align:center ;
-                align-items: center;
+                text-align:left;
             }
-     
-             #menu.slide {
-                 right: -8rem;
+            #menu li a {
+                text-decoration: none;
+                font-weight: bold;
+                color: #fff;
+                padding: .6rem;
+            }
+            #menu.slide {
+                 right: -13rem;
                  transition: all .3s ease;
              }
              #search-me {
@@ -279,7 +351,150 @@ body {
              .king {
                  height: auto;
              }
+             .kings-order {
+                 display: flex;
+                 flex-direction: column;
+             }
+             .kings-content {
+                 text-align: center;
+                 margin-bottom: 1rem;
+             }
+             .book-btn {
+                 padding: .4rem .6rem;
+             }
       }
+
+         @media screen and (min-width:600px) {
+            .kd-phone {
+                margin-right: 0;
+            }
+            .nav-body-list {
+                display:none;
+            }
+        
+            #burger-menu-icon {
+                display: block;
+                visibility: visible;
+                margin-right: .8rem;
+            }
+            #menu {
+                position: absolute; 
+                background: #000;
+                width: 100%;
+                right: -100%;
+                height: 100vh;
+                top: 15vh;
+                display: block;
+                transition: all 0.4s ease-in-out;
+                line-height: 3;
+            }
+
+            #menu li {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+            }
+            #menu li a {
+                text-decoration: none;
+                font-weight: bold;
+                color: #fff;
+                padding: .6rem;
+            }
+     
+             #menu.slide {
+                 right: -26rem;
+                 transition: all .3s ease;
+             }
+             #search-me {
+                 padding-top: 10px;
+                 font-size: 20px;
+                 margin-left: -20px;
+             }
+             .david {
+                 max-width: 100%;
+                 width: 100%;
+                 flex-direction: column;
+                 margin-bottom: 1rem;
+             }
+             .go {
+                 flex-direction: column;
+             }
+             .king {
+                 height: auto;
+             }
+         }
+
+         @media screen and (min-width:768px) {
+            .kd-phone {
+                margin-right: 0;
+            }
+            .nav-body-list {
+                display: block;
+            }
+            .nav-body-list li {
+                display: inline-block;
+            }     
+            #burger-menu-icon {
+                display: none;
+                /* margin-right: .8rem; */
+            }
+             #search-me {
+                 padding-top: 10px;
+                 font-size: 20px;
+                 margin-left: -20px;
+             }
+             .david {
+                 max-width: 100%;
+                 width: 100%;
+                 flex-direction: column;
+                 margin-bottom: 1rem;
+             }
+             .go {
+                 flex-direction: column;
+             }
+             .king {
+                 height: auto;
+             }
+         }
+
+         @media screen and (min-width:992px) {
+            .kd-phone {
+                margin-right: 3rem;
+            }
+        
+            #burger-menu-icon {
+                display: none;
+                margin-right: .8rem;
+            }
+            .nav-body-list {
+                display: block;
+            }
+            .nav-body-list li {
+                display: inline-block;
+            }
+             #search-me {
+                 padding-top: 10px;
+                 font-size: 20px;
+                 margin-left: -20px;
+             }
+             .go {
+                 flex-direction: row;
+                 display: flex;
+                 align-items: center;
+                 padding: .6rem;
+                 flex-wrap: wrap; 
+                 text-align: center;
+             }
+             .david {
+                max-width: calc(100%/4);
+                flex-direction: row;
+                margin: 0 auto;
+                margin-bottom: 1rem;
+             }
+             .king {
+                 height: 500px;
+             }
+         }
 
 
 

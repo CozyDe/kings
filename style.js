@@ -18,3 +18,12 @@ navTogg.addEventListener("click", function toggNav() {
       result.classList.toggle("slide");
       navTogg.classList.toggle("times"); 
   });
+
+   window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos > 20) {
+      document.getElementById("nav-scroll").style.height = "auto";
+    } else {
+      document.getElementById("nav-scroll").style.height = "17vh";
+    }
+  }
